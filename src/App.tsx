@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { CheckCircle, BarChart3, Trophy, Settings } from 'lucide-react';
+import { CheckCircle, BarChart3, Trophy, Settings as SettingsIcon } from 'lucide-react';
 import { useHabits } from './hooks/useHabits';
+import { ThemeToggle } from './components/common/ThemeToggle';
 import { DailyCheckIn } from './components/habits/DailyCheckIn';
 import { AnalyticsDashboard } from './components/analytics/AnalyticsDashboard';
 import { Achievements } from './components/dashboard/Achievements';
-import { DataExport } from './components/dashboard/DataExport';
+import { Settings } from './components/dashboard/Settings';
 import './App.css';
 import './styles/globals.css';
 
@@ -49,6 +50,7 @@ function App() {
                 <p>Build better habits, one day at a time</p>
               </div>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>
@@ -81,7 +83,7 @@ function App() {
               className={`nav-tab ${activeTab === 'settings' ? 'active' : ''}`}
               onClick={() => setActiveTab('settings')}
             >
-              <Settings size={20} />
+              <SettingsIcon size={20} />
               <span>Settings</span>
             </button>
           </div>
@@ -117,7 +119,7 @@ function App() {
           )}
 
           {activeTab === 'settings' && (
-            <DataExport onExport={exportData} onImport={importData} />
+            <Settings onExport={exportData} onImport={importData} />
           )}
         </div>
       </main>

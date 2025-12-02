@@ -50,7 +50,10 @@ export function HabitCard({
     >
       <div className="habit-card-header">
         <div className="habit-info">
-          <h3 className="habit-name">{habit.name}</h3>
+          <h3 className="habit-name">
+            {habit.icon && <span className="habit-icon">{habit.icon}</span>}
+            {habit.name}
+          </h3>
           {habit.description && (
             <p className="habit-description">{habit.description}</p>
           )}

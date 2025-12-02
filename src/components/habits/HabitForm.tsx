@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Habit, HabitCategory, FrequencyType } from '../../types';
 import { getHabitColor } from '../../utils/habitCalculations';
+import { EmojiPicker } from '../common/EmojiPicker';
 import './HabitForm.css';
 
 interface HabitFormProps {
@@ -37,6 +38,8 @@ export function HabitForm({ onSubmit, onCancel, initialData }: HabitFormProps) {
   );
   const [targetCount, setTargetCount] = useState(initialData?.targetCount?.toString() || '');
   const [color, setColor] = useState(initialData?.color || getHabitColor('custom'));
+  const [icon, setIcon] = useState(initialData?.icon || '');
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +52,7 @@ export function HabitForm({ onSubmit, onCancel, initialData }: HabitFormProps) {
       frequency,
       targetCount: targetCount ? parseInt(targetCount) : undefined,
       color: color || getHabitColor(category),
+      icon: icon || undefined,
     });
   };
 
@@ -102,6 +106,34 @@ export function HabitForm({ onSubmit, onCancel, initialData }: HabitFormProps) {
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="form-group">
+        <label className="label">Icon (Optional)</label>
+        <button
+          type="button"
+          className="icon-picker-btn"
+          onClick={() => setShowEmojiPicker(true)}
+        >
+          {icon ? (
+            <>
+              <span className="selected-icon">{icon}</span>
+              <span>Change Icon</span>
+            </>
+          ) : (
+            <span>Choose Icon</span>
+          )}
+        </button>
+        {icon && (
+          <button
+            type="button"
+            className="btn btn-sm btn-outline"
+            style={{ marginTop: '0.5rem' }}
+            onClick={() => setIcon('')}
+          >
+            Remove Icon
+          </button>
+        )}
       </div>
 
       <div className="form-group">
@@ -164,6 +196,14 @@ export function HabitForm({ onSubmit, onCancel, initialData }: HabitFormProps) {
           {initialData ? 'Update Habit' : 'Create Habit'}
         </button>
       </div>
+
+      {showEmojiPicker && (
+        <EmojiPicker
+          value={icon}
+          onChange={setIcon}
+          onClose={() => setShowEmojiPicker(false)}
+        />
+      )}
     </form>
   );
 }

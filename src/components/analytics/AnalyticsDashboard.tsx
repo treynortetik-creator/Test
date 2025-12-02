@@ -4,6 +4,7 @@ import type { Habit, HabitCompletion, HabitStats } from '../../types';
 import { StatsCard } from './StatsCard';
 import { HeatmapCalendar } from './HeatmapCalendar';
 import { ProgressChart } from './ProgressChart';
+import { Reports } from './Reports';
 import {
   formatDate,
 } from '../../utils/habitCalculations';
@@ -232,6 +233,8 @@ export function AnalyticsDashboard({
           color="var(--success)"
         />
       </div>
+
+      <Reports habits={habits} completions={completions} />
 
       {topHabits.length > 0 && (
         <div className="top-habits-section">

@@ -1,0 +1,44 @@
+.settings-page {
+  padding: 2rem 0;
+}
+
+.settings-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 2rem 0;
+}
+
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.settings-section {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 3rem;
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 1rem 0;
+  }
+
+  .settings-title {
+    font-size: 1.5rem;
+  }
+
+  .settings-sections {
+    gap: 2rem;
+  }
+
+  .settings-section {
+    padding-bottom: 2rem;
+  }
+}

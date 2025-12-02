@@ -1,0 +1,133 @@
+.notification-settings {
+  padding: 2rem 0;
+  max-width: 600px;
+}
+
+.notification-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.notification-header svg {
+  margin-bottom: 1rem;
+}
+
+.notification-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.notification-header p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.notification-status {
+  margin-bottom: 2rem;
+}
+
+.status-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.status-card.success {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.status-card.error {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.status-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--text-primary);
+}
+
+.status-card.success h3,
+.status-card.error h3 {
+  color: inherit;
+}
+
+.status-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.notification-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--success);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.notification-features {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.notification-features h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.notification-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-features li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .notification-settings {
+    padding: 1rem 0;
+  }
+
+  .notification-actions {
+    flex-direction: column;
+  }
+
+  .notification-actions .btn {
+    width: 100%;
+  }
+}
