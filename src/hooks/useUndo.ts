@@ -11,7 +11,7 @@ const UNDO_TIMEOUT = 10000; // 10 seconds to undo
 
 export function useUndo() {
   const [lastAction, setLastAction] = useState<UndoAction | null>(null);
-  const [undoTimeout, setUndoTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [undoTimeout, setUndoTimeout] = useState<number | null>(null);
 
   const addUndoAction = useCallback((action: Omit<UndoAction, 'timestamp'>) => {
     // Clear previous timeout
