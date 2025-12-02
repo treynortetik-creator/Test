@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, Edit2, Trash2, MessageSquare } from 'lucide-react';
-import { Habit, HabitCompletion, HabitStats } from '../../types';
-import { formatDate } from '../../utils/habitCalculations';
+import type { Habit, HabitCompletion, HabitStats } from '../../types';
 import './HabitCard.css';
 
 interface HabitCardProps {

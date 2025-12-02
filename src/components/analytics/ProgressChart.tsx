@@ -1,6 +1,6 @@
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { format, parseISO } from 'date-fns';
-import { ChartDataPoint } from '../../types';
+import type { ChartDataPoint } from '../../types';
 import './ProgressChart.css';
 
 interface ProgressChartProps {

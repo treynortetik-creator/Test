@@ -1,9 +1,8 @@
-import {
+import type {
   Habit,
   HabitCompletion,
   HabitStats,
   HabitStreak,
-  FrequencyType,
   HeatmapData,
 } from '../types';
 import {
@@ -15,10 +14,7 @@ import {
   eachDayOfInterval,
   differenceInDays,
   parseISO,
-  isAfter,
-  isBefore,
   subDays,
-  addDays,
 } from 'date-fns';
 
 export function formatDate(date: Date): string {
@@ -27,8 +23,7 @@ export function formatDate(date: Date): string {
 
 export function calculateStreak(
   habitId: string,
-  completions: HabitCompletion[],
-  frequency: FrequencyType
+  completions: HabitCompletion[]
 ): HabitStreak {
   const habitCompletions = completions
     .filter((c) => c.habitId === habitId && c.completed && !c.skipped)
@@ -118,7 +113,7 @@ export function calculateHabitStats(
     return date >= monthStart && date <= monthEnd;
   }).length;
 
-  const streak = calculateStreak(habit.id, completions, habit.frequency);
+  const streak = calculateStreak(habit.id, completions);
 
   // Calculate completion rate based on days since creation
   const createdDate = parseISO(habit.createdAt);
@@ -243,7 +238,7 @@ export function generateId(): string {
   return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 }
 
-export function isHabitDueToday(habit: Habit): boolean {
+export function isHabitDueToday(): boolean {
   // For now, all habits are due daily
   // This can be extended for weekly/monthly frequencies
   return true;

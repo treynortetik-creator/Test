@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Habit, HabitCompletion, HabitStats, Achievement } from '../types';
+import type { Habit, HabitCompletion, HabitStats, Achievement } from '../types';
 import { storageService } from '../services/storage';
 import {
   calculateHabitStats,
@@ -32,7 +32,7 @@ export function useHabits() {
     }
   }, [habits.length, completions.length]);
 
-  const addHabit = useCallback((habitData: Omit<Habit, 'id' | 'createdAt'>) => {
+  const addHabit = useCallback((habitData: Omit<Habit, 'id' | 'createdAt' | 'archived'>) => {
     const newHabit: Habit = {
       ...habitData,
       id: generateId(),

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Habit, HabitCategory, FrequencyType } from '../../types';
+import type { Habit, HabitCategory, FrequencyType } from '../../types';
 import { getHabitColor } from '../../utils/habitCalculations';
 import './HabitForm.css';
 

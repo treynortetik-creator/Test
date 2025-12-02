@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { format, startOfWeek, eachDayOfInterval, eachWeekOfInterval, endOfWeek, startOfYear, endOfYear, isSameDay, parseISO } from 'date-fns';
-import { HeatmapData } from '../../types';
+import { format, eachDayOfInterval, eachWeekOfInterval, endOfWeek, startOfYear, endOfYear } from 'date-fns';
+import type { HeatmapData } from '../../types';
 import './HeatmapCalendar.css';
 
 interface HeatmapCalendarProps {

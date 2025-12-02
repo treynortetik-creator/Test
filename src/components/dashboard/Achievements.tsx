@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Trophy, Lock } from 'lucide-react';
-import { Achievement } from '../../types';
+import type { Achievement } from '../../types';
 import { format } from 'date-fns';
 import './Achievements.css';
 

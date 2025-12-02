@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Plus, Calendar } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { format } from 'date-fns';
-import { Habit, HabitCompletion } from '../../types';
+import type { Habit, HabitCompletion } from '../../types';
 import { HabitCard } from './HabitCard';
 import { Modal } from '../common/Modal';
 import { HabitForm } from './HabitForm';
@@ -33,7 +33,7 @@ export function DailyCheckIn({
 }: DailyCheckInProps) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingHabit, setEditingHabit] = useState<Habit | null>(null);
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate] = useState(new Date());
 
   const activeHabits = habits.filter((h) => !h.archived);
   const dateStr = formatDate(selectedDate);

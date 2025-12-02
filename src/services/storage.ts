@@ -1,4 +1,4 @@
-import { Habit, HabitCompletion, Achievement } from '../types';
+import type { Habit, HabitCompletion, Achievement } from '../types';
 
 const STORAGE_KEYS = {
   HABITS: 'momentum_habits',

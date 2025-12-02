@@ -1,13 +1,11 @@
 import { useMemo } from 'react';
 import { TrendingUp, Target, Flame, Award, Calendar, BarChart3 } from 'lucide-react';
-import { Habit, HabitCompletion, HabitStats } from '../../types';
+import type { Habit, HabitCompletion, HabitStats } from '../../types';
 import { StatsCard } from './StatsCard';
 import { HeatmapCalendar } from './HeatmapCalendar';
 import { ProgressChart } from './ProgressChart';
 import {
-  generateHeatmapData,
   formatDate,
-  calculateHabitStats,
 } from '../../utils/habitCalculations';
 import { startOfWeek, endOfWeek, eachDayOfInterval, subWeeks, subDays } from 'date-fns';
 import './AnalyticsDashboard.css';
